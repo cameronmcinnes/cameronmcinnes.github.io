@@ -6,6 +6,7 @@ import Header from './header';
 const App = () => (
   <main>
     <Header />
+    <div className='divider'></div>
     <ProjectIndex />
   </main>
 )
