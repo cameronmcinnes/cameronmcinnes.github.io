@@ -1,0 +1,114 @@
+$screen-lg-min: 975px;
+
+@mixin lg {
+   @media (min-width: #{$screen-lg-min}) {
+       @content;
+   }
+}
+
+@keyframes slideUp {
+  from { transform: translate(0px, 100px);}
+  to { transform: translate(0px, 0px);}
+}
+
+@keyframes slideInRight {
+  from { transform: translate(-100%, 0px);}
+  to { transform: translate(0px, 0px);}
+}
+
+.project-index {
+  height: 2600px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  .project-item-container:last-child .project-item-image {
+     background-position: left;
+  }
+
+  @include lg {
+    height: 1040px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    .project-item-container:first-child {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
+    .project-item-container:last-child {
+      grid-column-start: 2;
+      grid-column-end: 4;
+
+      .project-item-image {
+       background-position: left top;
+      }
+    }
+  }
+
+  .project-item-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+
+    a {
+      width: 100%;
+      height: 100%;
+    }
+
+    .project-item-image {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      transition: transform 0.3s;
+      transform: scale(1); -webkit-transform: scale(1);
+    }
+  }
+
+  .project-item-overlay {
+    opacity: 0;
+  }
+
+  .project-item-container:hover {
+    .project-item-image {
+      transition: transform 0.5s;
+      transform: scale(1.05); -webkit-transform: scale(1.05);
+    }
+
+    .project-item-overlay {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-sizing: border-box;
+      opacity: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      background-color: rgba(56,77,157,.6);
+      overflow: hidden;
+    }
+
+    .project-title {
+      color: #fff;
+      position: absolute;
+      font-size: 50px;
+      bottom: 30px;
+      left: 40px;
+      z-index: 4;
+      animation: slideUp .5s forwards ease;
+    }
+
+    .bottom-bar {
+      width: 100%;
+      position: relative;
+      top: -5px;
+      height: 5px;
+      background-color: red;
+      animation: slideInRight .5s forwards ease;
+      // animation-delay: .5s;
+    }
+  }
+}

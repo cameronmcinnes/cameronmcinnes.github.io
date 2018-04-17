@@ -14,7 +14,7 @@ span, article, footer, time, small {
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Rubik', sans-serif;
 }
 
 html {
@@ -55,4 +55,8 @@ a {
 
 button:disabled, input[type="submit"]:disabled {
   cursor: default;
+}
+
+p {
+  font-weight: lighter;
 }

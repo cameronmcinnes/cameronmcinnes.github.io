@@ -2,12 +2,16 @@ import React from 'react';
 
 const ProjectIndexItem = ({projectTitle, imageUrl}) => {
   return (
-    <a>
-      <div className='project-item-container'
+    <div className='project-item-container'>
+      <div className='project-item-image'
         style={ { backgroundImage: `url(${imageUrl})` } }>
-        <h2 className='project-title'>{ projectTitle }</h2>
+        <a>
+          <div className='project-item-overlay'></div>
+        </a>
       </div>
-    </a>
+      <h2 className='project-title'>{ projectTitle }</h2>
+      <div className='bottom-bar'></div>
+    </div>
   )
 }
 

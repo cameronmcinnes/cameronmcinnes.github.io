@@ -1,0 +1,41 @@
+$screen-md-min: 650px;
+$screen-lg-min: 975px;
+
+@mixin md {
+   @media (min-width: #{$screen-md-min}) {
+       @content;
+   }
+}
+
+@mixin lg {
+   @media (min-width: #{$screen-lg-min}) {
+       @content;
+   }
+}
+
+.intro {
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+
+
+  // background-image: image();
+  .intro-text {
+    margin: auto;
+    margin-left: 20px;
+
+    @include lg {
+      width: 920px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 50px;
+
+      @include md {
+        font-size: 70px;
+      }
+    }
+  }
+
+}

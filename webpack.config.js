@@ -17,10 +17,12 @@ const extractSass = new ExtractTextPlugin({
 const ASSET_PATH = '/assets/'; //process.env.ASSET_PATH || '/';
 
 module.exports = {
-  entry: "./src/index.jsx",
-  output: {
-    publicPath: ASSET_PATH
-  },
+  // entry: "./src/index.jsx",
+  // output: {
+  //   filename: "main.js",
+  //   path: path.resolve(__dirname, "js"),
+  //   publicPath: ASSET_PATH
+  // },
   module: {
     rules: [
       {

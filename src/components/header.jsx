@@ -1,6 +1,6 @@
 import React from 'react';
 
-import style from '../header.scss';
+import style from '../stylesheets/header.scss';
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
       <div className='header-inner'>
         <nav className='contact-nav'>
           <ul>
-            <li><h2>Cameron McInnes</h2></li>
+            <li><h3>Cameron McInnes</h3></li>
             <li> <a>github</a> </li>
             <li> <a>linkedin</a> </li>
             <li> <a>resume</a> </li>
