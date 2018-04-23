@@ -59,15 +59,15 @@ const secondP = {
       and can select, clear and mute trains. The trains run at accurate
       speeds relative to one another. When they arrive at stations,
       trains play notes that are determined by the subway line.
-      <strong>See the live site <a href={liveUrls['playmta']}>here</a></strong>
-      <strong>See the code <a href={repoUrls['playmta']}>here</a></strong>
     </p>
   ),
   'bandland': (
     <p className='p-2'>
-      Bandland includes 
-      <strong>See the live site <a href={liveUrls['bandland']}>here</a></strong>
-      <strong>See the code <a href={repoUrls['bandland']}>here</a></strong>
+      Bandland allows users to create profiles, to create, upload, tag,
+      and collect albums, and to search and follow other users. The app includes
+      features like a live debounced AJAX search and a discover by tags component.
+      Bandland uses Amazon Web Services S3 to store image and track uploads from
+      users.
     </p>
   ),
   'gorm': (
@@ -76,7 +76,6 @@ const secondP = {
       metaprogramming to intelligently generate method names. GoRM allows
       customization of names but is most powerful when used in conjunction
       with strong naming conventions.
-      <strong>See the code <a href={repoUrls['gorm']}>here</a></strong>
     </p>
   )
 }
@@ -114,6 +113,10 @@ const ProjectShow = ({match}) => {
 
       <article className='description'>
         <h3>{ subtitles[title] }</h3>
+        <nav>
+          { liveUrls[title] && <a href={ liveUrls[title] }>Live</a> }
+          { <a href={ repoUrls[title] }>Repo</a> }
+        </nav>
         { firstP[title] }
         { secondP[title] }
       </article>

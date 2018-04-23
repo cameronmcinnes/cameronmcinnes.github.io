@@ -34,7 +34,7 @@ class Header extends React.Component {
               <li><Link to='/'><h3>Cameron McInnes</h3></Link></li>
               <li><a href='https://github.com/cameronmcinnes'>github</a></li>
               <li><a href='https://www.linkedin.com/in/cameron-mcinnes-008bb625/'>linkedin</a></li>
-              <li><Link to='/resume'>resume</Link></li>
+              <li><a href='https://s3.amazonaws.com/bandland-development/resume_formatted_v3_active_links.pdf'>resume</a></li>
             </ul>
           </nav>
 
