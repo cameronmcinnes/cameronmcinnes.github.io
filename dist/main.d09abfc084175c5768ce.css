@@ -1,0 +1,233 @@
+footer {
+  margin: 50px;
+  margin-top: 100px; }
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, h3, h4, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  vertical-align: inherit;
+  box-sizing: inherit;
+  background: transparent;
+  font-family: 'Rubik', sans-serif; }
+
+html {
+  -webkit-font-smoothing: antialiased; }
+
+ul {
+  list-style: none; }
+
+img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+input[type="password"],
+input[type="email"],
+input[type="text"],
+input[type="submit"],
+input[type="file"],
+textarea,
+button {
+  /*
+  Get rid of native styling. Read more here:
+  http://css-tricks.com/almanac/properties/a/appearance/
+  */
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+button,
+input[type="submit"],
+i,
+a {
+  cursor: pointer; }
+
+button:disabled, input[type="submit"]:disabled {
+  cursor: default; }
+
+p {
+  font-weight: lighter; }
+.main-header {
+  border-bottom: solid 1px #eee; }
+  .main-header nav ul {
+    display: flex; }
+  .main-header nav ul li {
+    padding: 0 10px; }
+  .main-header .contact-nav ul li:first-child {
+    padding: 0px; }
+  .main-header h3 {
+    font-weight: bolder; }
+  .main-header .project-nav {
+    display: none; }
+  .main-header .dropdown-trigger {
+    cursor: pointer;
+    position: relative; }
+    .main-header .dropdown-trigger:hover .fa {
+      color: #888; }
+    .main-header .dropdown-trigger .mobile-nav {
+      position: absolute;
+      text-align: right;
+      right: -11px;
+      margin-top: 20px; }
+      .main-header .dropdown-trigger .mobile-nav li {
+        margin: 10px 0; }
+      .main-header .dropdown-trigger .mobile-nav ul {
+        flex-direction: column; }
+  .main-header .header-inner {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between; }
+    @media (min-width: 975px) {
+      .main-header .header-inner {
+        padding: 20px 75px; } }
+  @media (min-width: 650px) {
+    .main-header .dropdown-trigger {
+      display: none; }
+    .main-header .project-nav {
+      display: block; } }
+.intro {
+  height: 500px;
+  display: flex;
+  flex-direction: column; }
+  .intro .intro-text {
+    margin: auto;
+    margin-left: 20px; }
+    @media (min-width: 975px) {
+      .intro .intro-text {
+        margin: auto 75px; } }
+    .intro .intro-text h1 {
+      font-size: 50px; }
+      @media (min-width: 650px) {
+        .intro .intro-text h1 {
+          font-size: 70px; } }
+@keyframes slideUp {
+  from {
+    transform: translate(0px, 100px); }
+  to {
+    transform: translate(0px, 0px); } }
+
+@keyframes slideInRight {
+  from {
+    transform: translate(-100%, 0px); }
+  to {
+    transform: translate(0px, 0px); } }
+
+.project-index {
+  height: 1560px;
+  display: grid;
+  grid-template-columns: 1fr; }
+  .project-index .project-item-container:last-child .project-item-image {
+    background-position: left; }
+  @media (min-width: 975px) {
+    .project-index {
+      height: 1040px;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr; }
+      .project-index .project-item-container:first-child {
+        grid-column-start: 1;
+        grid-column-end: 4; }
+      .project-index .project-item-container:nth-child(2) {
+        grid-column: span 2; }
+      .project-index .project-item-container:last-child .project-item-image {
+        background-position: left top; } }
+  .project-index .project-item-container {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    height: 520px; }
+    .project-index .project-item-container a {
+      width: 100%;
+      height: 100%; }
+    .project-index .project-item-container .project-item-image {
+      width: 100%;
+      height: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      transition: transform 0.3s;
+      transform: scale(1);
+      -webkit-transform: scale(1); }
+  .project-index .project-item-overlay {
+    opacity: 0; }
+  .project-index .project-item-container:hover .project-item-image {
+    transition: transform 0.5s;
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05); }
+  .project-index .project-item-container:hover .project-item-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(56, 77, 157, 0.6);
+    overflow: hidden; }
+  .project-index .project-item-container:hover .project-info {
+    color: #fff;
+    position: absolute;
+    font-size: 50px;
+    bottom: 30px;
+    left: 40px;
+    z-index: 4;
+    animation: slideUp .5s forwards ease; }
+    .project-index .project-item-container:hover .project-info a {
+      font-size: 16px; }
+    .project-index .project-item-container:hover .project-info a:hover {
+      color: black; }
+  .project-index .project-item-container:hover .bottom-bar {
+    width: 100%;
+    position: relative;
+    top: -5px;
+    height: 5px;
+    background-color: red;
+    animation: slideInRight .5s forwards ease; }
+.project-show {
+  height: 100%;
+  margin: 0 10px; }
+  .project-show h3 {
+    font-size: 20px; }
+  .project-show p {
+    line-height: 1.4; }
+    .project-show p a {
+      color: red;
+      font-weight: bolder; }
+      .project-show p a:hover {
+        color: darkred; }
+  .project-show .proj-title {
+    font-size: 60px;
+    margin: auto 0px; }
+    .project-show .proj-title h2 {
+      margin-top: 50px; }
+  .project-show .description {
+    grid-row-start: 3; }
+    .project-show .description p {
+      margin: 20px 0; }
+      .project-show .description p strong {
+        display: block;
+        font-weight: bolder;
+        margin: 20px 0px; }
+  .project-show .proj-header section {
+    margin: 75px 0px; }
+  .project-show .logo-img {
+    max-height: 250px; }
+  @media (min-width: 650px) {
+    .project-show .proj-header section {
+      display: flex; }
+    .project-show .logo-img {
+      width: auto; } }
+  @media (min-width: 975px) {
+    .project-show {
+      margin: 30px 75px; } }
+
+/*# sourceMappingURL=main.d09abfc084175c5768ce.css.map*/

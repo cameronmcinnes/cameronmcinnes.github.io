@@ -65,7 +65,7 @@ const secondP = {
   ),
   'bandland': (
     <p className='p-2'>
-      Bandland
+      Bandland includes 
       <strong>See the live site <a href={liveUrls['bandland']}>here</a></strong>
       <strong>See the code <a href={repoUrls['bandland']}>here</a></strong>
     </p>
