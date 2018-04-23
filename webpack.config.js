@@ -23,6 +23,10 @@ module.exports = {
   //   path: path.resolve(__dirname, "js"),
   //   publicPath: ASSET_PATH
   // },
+  output: {
+    path: __dirname,
+    filename: "bundle.js"
+  },
   module: {
     rules: [
       {
