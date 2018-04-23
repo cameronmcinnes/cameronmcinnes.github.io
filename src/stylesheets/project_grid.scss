@@ -1,4 +1,11 @@
+$screen-md-min: 650px;
 $screen-lg-min: 975px;
+
+@mixin md {
+   @media (min-width: #{$screen-md-min}) {
+       @content;
+   }
+}
 
 @mixin lg {
    @media (min-width: #{$screen-lg-min}) {
@@ -17,10 +24,10 @@ $screen-lg-min: 975px;
 }
 
 .project-index {
-  height: 2600px;
+  height: 1560px;
   display: grid;
+  // grid-gap: 5px;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
 
   .project-item-container:last-child .project-item-image {
      background-position: left;
@@ -33,13 +40,14 @@ $screen-lg-min: 975px;
 
     .project-item-container:first-child {
       grid-column-start: 1;
-      grid-column-end: 3;
+      grid-column-end: 4;
+    }
+
+    .project-item-container:nth-child(2) {
+      grid-column: span 2;
     }
 
     .project-item-container:last-child {
-      grid-column-start: 2;
-      grid-column-end: 4;
-
       .project-item-image {
        background-position: left top;
       }
@@ -50,6 +58,7 @@ $screen-lg-min: 975px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    height: 520px;
 
     a {
       width: 100%;
@@ -91,7 +100,7 @@ $screen-lg-min: 975px;
       overflow: hidden;
     }
 
-    .project-title {
+    .project-info {
       color: #fff;
       position: absolute;
       font-size: 50px;
@@ -99,6 +108,14 @@ $screen-lg-min: 975px;
       left: 40px;
       z-index: 4;
       animation: slideUp .5s forwards ease;
+
+      a {
+        font-size: 16px;
+      }
+
+      a:hover {
+        color: black;
+      }
     }
 
     .bottom-bar {

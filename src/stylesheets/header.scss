@@ -1,4 +1,11 @@
+$screen-md-min: 650px;
 $screen-lg-min: 975px;
+
+@mixin md {
+   @media (min-width: #{$screen-md-min}) {
+       @content;
+   }
+}
 
 @mixin lg {
    @media (min-width: #{$screen-lg-min}) {
@@ -10,7 +17,7 @@ $screen-lg-min: 975px;
   // position: sticky;
   // top: 0;
   // z-index: 10;
-  border-bottom: solid 1px #eee; 
+  border-bottom: solid 1px #eee;
   // background-color: rgba(255,255,255,.96);
   // box-shadow: 0px 0.01px 5px grey;
 
@@ -22,12 +29,44 @@ $screen-lg-min: 975px;
     padding: 0 10px;
   }
 
-  nav ul li:first-child {
+  .contact-nav ul li:first-child {
     padding: 0px;
   }
 
   h3 {
     font-weight: bolder;
+  }
+
+  .contact-nav {
+
+  }
+
+  .project-nav {
+    display: none;
+  }
+
+  .dropdown-trigger {
+    cursor: pointer;
+    position: relative;
+
+    &:hover .fa {
+      color: #888;
+    }
+
+    .mobile-nav {
+      position: absolute;
+      text-align: right;
+      right: -11px;
+      margin-top: 20px;
+
+      li {
+        margin: 10px 0;
+      }
+
+      ul {
+        flex-direction: column;
+      }
+    }
   }
 
   .header-inner {
@@ -40,11 +79,13 @@ $screen-lg-min: 975px;
     }
   }
 
-  .contact-nav {
+  @include md{
+    .dropdown-trigger {
+      display: none;
+    }
 
-  }
-
-  .project-nav {
-
+    .project-nav {
+      display: block;
+    }
   }
 }
